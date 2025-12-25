@@ -23,33 +23,33 @@ export default function NavbarTop() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4 bg-white h-full px-2">
-            <Link to="https://www.facebook.com/#">
+          <div className="flex items-center gap-4 bg-white h-full px-3">
+            <Link to="https://www.facebook.com/#" target="_blank">
               <img
                 src={FacebookIcon}
                 alt="Facebook"
-                className="w-4 h-4 cursor-pointer"
+                className="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
-            <Link to="https://www.youtube.com/#">
+            <Link to="https://www.youtube.com/#" target="_blank">
               <img
                 src={YoutubeIcon}
                 alt="Youtube"
-                className="w-4 h-4 cursor-pointer"
+                className="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
-            <Link to="https://www.instagram.com/#">
+            <Link to="https://www.instagram.com/#" target="_blank">
               <img
                 src={InstagramIcon}
                 alt="Instagram"
-                className="w-4 h-4 cursor-pointer"
+                className="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
-            <Link to="https://twitter.com/#">
+            <Link to="https://twitter.com/#" target="_blank">
               <img
                 src={TwitterIcon}
                 alt="Twitter"
-                className="w-4 h-4 cursor-pointer"
+                className="w-4 h-4 cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
           </div>
