@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, ShoppingCart, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import Logo from "../../assets/logo-main.svg";
+import Button from "./Button";
 import Container from "./Container";
 import NavbarTop from "./NavbarTop";
 
@@ -21,7 +22,7 @@ export default function Navbar() {
                   Home
                 </li>
                 <li className="cursor-pointer hover:text-primary transition-colors">
-                  About US
+                  About Us
                 </li>
                 <li className="flex items-center gap-2 cursor-pointer hover:text-primary transition-colors">
                   Our Services <ChevronDown className="h-4 w-4" />
@@ -53,9 +54,7 @@ export default function Navbar() {
                 </span>
               </div>
               <div className="hidden md:inline-block">
-                <button className="bg-primary text-white text-sm px-8 py-4">
-                  Contact Us
-                </button>
+                <Button className="px-8">Contact Us</Button>
               </div>
               {/* Mobile Menu Toggle Button */}
               <button
