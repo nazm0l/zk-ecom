@@ -30,7 +30,7 @@ const products = [
 
 export default function ProductSection() {
   return (
-    <div>
+    <div className="bg-white py-15">
       <Container>
         <div className="flex justify-between items-center mt-20 mb-6">
           <h3 className="text-3xl font-bold">Our Apparels</h3>
@@ -42,7 +42,7 @@ export default function ProductSection() {
           {/* Product items will go here */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {products.map((product, index) => (
-              <div key={index} className="w-72.5 h-80.25 p-2.5">
+              <div key={index} className="w-full md:w-72.5 md:h-80.25 p-2.5">
                 <div>
                   <img
                     src={product.image}
