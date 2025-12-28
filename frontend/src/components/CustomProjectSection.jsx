@@ -5,9 +5,9 @@ import Container from "./common/Container";
 
 export default function CustomProjectSection() {
   return (
-    <div className="bg-secondary/10 py-6 h-146.5">
+    <div className="bg-secondary/10 py-6 lg:py-6 min-h-100 lg:h-146.5">
       <Container className="flex items-center h-full">
-        <div className="flex flex-col md:flex-row gap-3">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-3 w-full">
           <div
             style={{
               backgroundImage: `url(${bgPattern})`,
@@ -15,15 +15,15 @@ export default function CustomProjectSection() {
               backgroundPosition: "center",
               repeat: "no-repeat",
             }}
-            className="px-12 w-full md:w-179 mt-10"
+            className="px-6 sm:px-8 lg:px-12 w-full lg:w-179 py-8 lg:mt-10"
           >
-            <span className="inline-block mt-9 border border-secondary rounded-full text-secondary px-6 py-2.5">
+            <span className="inline-block border border-secondary rounded-full text-secondary px-4 sm:px-6 py-2 sm:py-2.5 text-sm sm:text-base">
               Process
             </span>
-            <h4 className="text-3xl font-medium mt-0.5 mb-3">
+            <h4 className="text-xl sm:text-2xl lg:text-3xl font-medium mt-4 lg:mt-0.5 mb-3">
               Do You Want Custom Project With Textilery? Contact Us Now
             </h4>
-            <p className=" text-black/40 mb-3.5">
+            <p className="text-sm sm:text-base text-black/40 mb-4 lg:mb-3.5">
               At Zaheen Knitwear Ltd., we pride ourselves on being your reliable
               partner for apparel production. Our commitment to ethical
               manufacturing ensures that every garment is crafted with care and
@@ -31,13 +31,17 @@ export default function CustomProjectSection() {
             </p>
             <Button
               variant="secondary"
-              className="border! border-secondary! text-secondary!"
+              className="border! border-secondary! text-secondary! w-full sm:w-auto hover:bg-secondary! hover:text-white!"
             >
               Learn More
             </Button>
           </div>
-          <div>
-            <img src={clothes} alt="Custom Project" />
+          <div className="w-full lg:w-auto flex justify-center items-center">
+            <img
+              src={clothes}
+              alt="Custom Project"
+              className="w-full max-w-md lg:max-w-none h-auto object-cover"
+            />
           </div>
         </div>
       </Container>
