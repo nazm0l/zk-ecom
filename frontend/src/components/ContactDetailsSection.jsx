@@ -1,4 +1,5 @@
 import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { motion } from "motion/react";
 import AliPay from "../assets/Vector-1.svg";
 import AmazonDrive from "../assets/Vector-2.svg";
 import AmazonPay from "../assets/Vector-3.svg";
@@ -66,7 +67,12 @@ export default function ContactDetailsSection() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row lg:absolute lg:-top-48 lg:right-0 gap-0">
-            <div className="w-full sm:w-auto lg:size-67.5 flex flex-col justify-center gap-2.5 px-6 sm:px-9 py-8 lg:py-0 bg-primary text-white">
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="w-full sm:w-auto lg:size-67.5 flex flex-col justify-center gap-2.5 px-6 sm:px-9 py-8 lg:py-0 bg-primary text-white"
+            >
               <h3 className="text-xl sm:text-2xl font-semibold">
                 Quality Product
               </h3>
@@ -78,8 +84,13 @@ export default function ContactDetailsSection() {
                 <span>Read More</span>
                 <ArrowRight className="size-5 text-white" />
               </div>
-            </div>
-            <div className="w-full sm:w-auto lg:w-70.25 lg:h-67.5 flex flex-col justify-center gap-2.5 px-6 sm:px-9 py-8 lg:py-0 bg-secondary text-white">
+            </motion.div>
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="w-full sm:w-auto lg:w-70.25 lg:h-67.5 flex flex-col justify-center gap-2.5 px-6 sm:px-9 py-8 lg:py-0 bg-secondary text-white"
+            >
               <h3 className="text-xl sm:text-2xl font-semibold">
                 Project Overview
               </h3>
@@ -90,7 +101,7 @@ export default function ContactDetailsSection() {
                 <span>Read More</span>
                 <ArrowRight className="size-5 text-white" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="mt-20 h-26.25 relative">
