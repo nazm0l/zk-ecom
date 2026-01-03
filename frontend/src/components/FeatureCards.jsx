@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import CheckingIcon from "../assets/card-icons/checking-icon.svg";
 import CuttingIcon from "../assets/card-icons/cutting-icon.svg";
 import DyeingIcon from "../assets/card-icons/dyeing-icon.svg";
@@ -54,34 +55,63 @@ const features = [
   },
 ];
 
+/* Parent animation */
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+/* Card animation */
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 export default function FeatureCards() {
   return (
     <div className="relative mt-8 md:-mt-10">
       <Container>
-        <div className="flex flex-wrap justify-center gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          className="flex flex-wrap justify-center gap-8"
+        >
           {features.map((feature) => (
-            <div
+            <motion.div
               key={feature.id}
+              variants={cardVariants}
               className="relative flex items-center w-full md:w-70 h-62.75 bg-white shadow-[0_0_13.73px_rgba(104,104,104,0.17)] px-4.5 py-6"
             >
               <span className="absolute -top-4 right-1/2 md:right-32 w-9 h-9 rounded-full shadow-md bg-white text-sm text-center px-3 py-2.5 font-bold text-black/60">
                 {feature.id}
               </span>
+
               <div>
-                <img
-                  src={feature.icon}
-                  alt=""
-                  srcset=""
-                  className="size-12.5"
-                />
+                <img src={feature.icon} alt="" className="size-12.5" />
                 <h3 className="text-[22px] text-black/60 font-semibold py-4">
                   {feature.name}
                 </h3>
-                <p className=" text-black/40">{feature.description}</p>
+                <p className="text-black/40">{feature.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </div>
   );

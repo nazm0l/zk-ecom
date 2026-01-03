@@ -1,4 +1,5 @@
 import { ShoppingCart } from "lucide-react";
+import { motion } from "motion/react";
 import Product1Image from "../assets/product-1.png";
 import Product2Image from "../assets/product-2.png";
 import Product3Image from "../assets/product-3.png";
@@ -30,7 +31,13 @@ const products = [
 
 export default function ProductSection() {
   return (
-    <div className="bg-white py-15">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.5 }}
+      className="bg-white py-15"
+    >
       <Container>
         <div className="flex justify-between items-center mt-20 mb-6">
           <h3 className="text-3xl font-bold">Our Apparels</h3>
@@ -69,6 +76,6 @@ export default function ProductSection() {
           </div>
         </div>
       </Container>
-    </div>
+    </motion.div>
   );
 }
